@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(./background.jpg);
+    background-size: cover;
+    color: whitesmoke;
+}
+header{
+       text-align: center;
+       margin:20px auto;
+       
+
+}
+header h1{
+            color:whitesmoke;
+            font-family: "Lobster", sans-serif;
+            font-size: 3rem;
+            margin-bottom: 5px;
+}
+header h4{font-family: "Lobster", sans-serif;
+         color: whitesmoke;
+         font-size: 30px;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    column-gap: 100px;
+    row-gap: 80px;
+    margin:50px 100px;
+}
+
+.card {
+    width: 250px;
+    height: 320px;
+    border-radius: 20px;
+    animation: circulating-border 9s linear infinite;
+    
+}
+.card:hover {
+    animation: none;
+}
+  
+.card_itself {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.4s linear;
+    transform: rotateY(0deg); 
+}
+  
+.card_itself:hover {
+    transform: rotateY(180deg);
+}
+ 
+.card_front,.card_back{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    text-align: center;
+    border: 3px solid rgba(250, 247, 247, 0.674);
+    border-radius: 20px;
+}
+
+.card_front {
+    background-color: #8997ae;
+}
+  
+.card_front img {
+    width: 160px;
+    height: 160px;
+    display: inline-block;
+    margin-top: 67px;
+}
+  
+  
+  
+.card_back {
+    background-color: rgba(15, 15, 15, 0.476);
+    color: #f9f3f3;
+    transform: rotateY(180deg);
+    padding: 20px 5px 5px 5px;
+}
+  
+h3,h5 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+  
+.card_back p {
+    font-size: 18px;
+    text-align: center;
+}
+  
+  @keyframes circulating-border {
+    0% {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.408);
+      transform: rotate(0deg);
+    }
+    25% {
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.318);
+      transform: rotate(90deg);
+    }
+    50% {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      transform: rotate(180deg);
+    }
+    75% {
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      transform: rotate(270deg);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        transform: rotate(360deg);
+      }
+  }
